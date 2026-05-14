@@ -37,8 +37,8 @@ def main():
         j = random.randint(1, 9)
 
         ONNX_MODEL_PATH = f"onnx/original/ACASXU_run2a_{i}_{j}_batch_2000.onnx"
-        PERTURBED_ONNX_MODEL_PATH = f"onnx/perturbed/ACASXU_run2a_{i}_{j}_batch_2000_perturbed.onnx"
-        perturb_network(ONNX_MODEL_PATH, PERTURBED_ONNX_MODEL_PATH, P, seed)
+        PERTURBED_ONNX_MODEL_PATH = f"onnx/perturbed/ACASXU_run2a_{i}_{j}_batch_2000_perturbed_{ix}.onnx"
+        perturb_network(ONNX_MODEL_PATH, PERTURBED_ONNX_MODEL_PATH, P, random.randint(0, 2**32 - 1))
 
         instance = [[("f", ONNX_MODEL_PATH),("g", PERTURBED_ONNX_MODEL_PATH)], vnnlib_filename, VNN_COMP_TIMEOUT]
         instance_data.append(instance)

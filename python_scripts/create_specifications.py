@@ -8,7 +8,7 @@ def vnnlib_template_2(eps_in):
     lines = []
 
     # intro comment
-    lines.append("; Epsilion equivalence in pruned networks:")
+    lines.append("; Epsilion equivalence in simulated retrained networks:")
     lines.append("; a VNN-COMP benchmark with equivalent networks.")
     lines.append("; Author: Lukas Rohwer")
     lines.append("")
@@ -45,10 +45,10 @@ def vnnlib_template_2(eps_in):
 
     # output constraints
     lines.append("; Output Constraints")
-    lines.append(f"(assert (and (<= Y_g[0] (+ Y_f[0] {eps_in})) (>= Y_g[0] (- Y_f[0] {eps_in}))))")
-    lines.append(f"(assert (and (<= Y_g[1] (+ Y_f[1] {eps_in})) (>= Y_g[1] (- Y_f[1] {eps_in}))))")
-    lines.append(f"(assert (and (<= Y_g[2] (+ Y_f[2] {eps_in})) (>= Y_g[2] (- Y_f[2] {eps_in}))))")
-    lines.append(f"(assert (and (<= Y_g[3] (+ Y_f[3] {eps_in})) (>= Y_g[3] (- Y_f[3] {eps_in}))))")
-    lines.append(f"(assert (and (<= Y_g[4] (+ Y_f[4] {eps_in})) (>= Y_g[4] (- Y_f[4] {eps_in}))))")
+    lines.append(f"(assert (and (> Y_g[0] (+ Y_f[0] {eps_in})) (< Y_g[0] (- Y_f[0] {eps_in}))))")
+    lines.append(f"(assert (and (> Y_g[1] (+ Y_f[1] {eps_in})) (< Y_g[1] (- Y_f[1] {eps_in}))))")
+    lines.append(f"(assert (and (> Y_g[2] (+ Y_f[2] {eps_in})) (< Y_g[2] (- Y_f[2] {eps_in}))))")
+    lines.append(f"(assert (and (> Y_g[3] (+ Y_f[3] {eps_in})) (< Y_g[3] (- Y_f[3] {eps_in}))))")
+    lines.append(f"(assert (and (> Y_g[4] (+ Y_f[4] {eps_in})) (< Y_g[4] (- Y_f[4] {eps_in}))))")
 
     return lines
