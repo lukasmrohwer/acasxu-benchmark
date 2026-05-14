@@ -9,7 +9,7 @@
     (declare-output Y_f real [5])
 )
 (declare-network g
-    (equal-to f)
+    (isomorphic-to f)
     (declare-input X_g real [5])
     (declare-output Y_g real [5])
 )
@@ -19,7 +19,7 @@
 (assert (and (<= X_f[1] 0.5) (>= X_f[1] -0.5)))
 (assert (and (<= X_f[2] 0.5) (>= X_f[2] -0.5)))
 (assert (and (<= X_f[3] 0.5) (>= X_f[3] 0.45)))
-(assert (and (<= X_f[4] -0.45) (>= X_f[4] -0.45)))
+(assert (and (<= X_f[4] -0.45) (>= X_f[4] -0.5)))
 (assert (== X_f[0] X_g[0]))
 (assert (== X_f[1] X_g[1]))
 (assert (== X_f[2] X_g[2]))

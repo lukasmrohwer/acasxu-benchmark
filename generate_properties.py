@@ -19,10 +19,10 @@ def main():
     random.seed(seed)
 
     # create VNN-LIB 2.0 files given the following:
-    P = 0.001               # size of the input pertubation
+    P = 0.001               # size of the network weights pertubation
     EPS = 0.05              # size of the output distance
     VNN_COMP_TIMEOUT = 100  # per-instance verification timeout
-    num_instances = 10
+    num_instances = 1
 
     i = 0
     instance_data = []
